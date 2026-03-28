@@ -12,27 +12,46 @@ description: Full brand, copy, and design standards for yogahub. Read this + bui
 
 ## Brand Name Rule
 
-Always written as **"yogahub"** — fully lowercase, no exceptions. Never "YogaHub", "Yoga Hub", or "YOGAHUB".
+Always **"yogahub"** — fully lowercase. Never "YogaHub", "Yoga Hub", or "YOGAHUB".
 
-## Brand Colours
+## Brand Colours (extracted from yogahub.ie CSS — verified by frequency)
 
-| Colour | Use |
-|--------|-----|
-| Pink/rose tones | Primary brand accent |
-| `#dad1da` | Light grey |
-| `#808080` | Mid grey |
-| `#efe9ee` | Light pink background |
-| White | Primary background |
-| Dark (near-black) | Body text on light backgrounds |
+| Token | Hex | Frequency | Use |
+|-------|-----|-----------|-----|
+| Dusty Rose / Mauve Pink | `#D8C4C4` | 5× | Primary brand pink — backgrounds, accents, section fills |
+| Dusty Rose Dark | `#cbb4b4` | 1× | Darker variant — hover, borders |
+| Bright Pink Accent | `#fd9598` | 1× | Hover states, bright accent |
+| Pale Blue-Grey | `#b8d0dd` | 1× | Subtle secondary accent |
+| White | `#ffffff` | primary | Page background, text on dark |
+| Black / Near-Black | `#000000` | body text | Primary body text on white |
+| Light Grey | `#f0f0f0` | 2× | Section backgrounds, dividers |
 
-**Rule**: Light background = dark text. Dark background = light text. Always.
+**Important notes:**
+- The brand pink is **muted dusty rose** `#D8C4C4` — not a bright or saturated pink
+- `#8A2BE2` (purple, 2×) appears to be an Elementor editor default — NOT a brand colour
+- Background is white; brand pink used as accents and section fills, not full-page backgrounds
 
-## Typography
+## Default Theme: LIGHT
 
-- **Primary font**: Quicksand (all weights 300–700)
-- Tight tracking on headlines, wide tracking on uppercase labels
-- Italic at large sizes for hero anchors and pull quotes
+yogahub is fully **light-themed**:
+- **Page background**: white `#ffffff`
+- **Body text**: near-black `#000000`
+- **Brand accent**: dusty rose `#D8C4C4` for section backgrounds, borders, highlights
+- **Rule**: Light bg always. Dark text on light always. No full dark-mode sections.
+
+## Typography (extracted from yogahub.ie — verified)
+
+- **Only font**: **Quicksand** — all weights loaded (300, 400, 500, 600, 700)
+- Google Fonts URL: `fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700`
 - No second font — Quicksand does everything
+- **Weight usage**:
+  - 700: Headlines, strong CTAs
+  - 600: Sub-headings, labels
+  - 400: Body copy
+  - 300: Captions, fine print
+- Tight tracking on large headlines (`letter-spacing: -0.02em`)
+- Wide tracking on uppercase micro-labels (`letter-spacing: 0.2em`)
+- Italic at large sizes for hero anchors and pull quotes
 
 ## Teacher Training Pricing
 
@@ -43,64 +62,50 @@ Always written as **"yogahub"** — fully lowercase, no exceptions. Never "YogaH
 | Reformer Pilates TT | £300 | £1,199 | Split into 3 |
 | Barre TT | Confirm | Confirm | Confirm |
 
-**Note**: If splitting into instalments increases the total, reflect the higher price.
+Note: If splitting into instalments increases the total, reflect the higher price.
 
 ## Currency Rules
 
 - **Programme costs**: £ (pounds)
 - **Product/intro offer pricing**: € (euros)
-- **Intro offer**: €49 unlimited yoga (Meta and Google campaigns)
+- **Intro offer**: €49 unlimited yoga
 
 ## Copy Voice & Tone
 
 **Voice pillars**: Welcoming · Grounded · Aspirational · Irish warmth
-**Audience**: Yoga practitioners in Ireland considering teaching as a profession or deepening their practice
 
-**Headline approach**: Speak to the reader's desire to go deeper, not just to "become a teacher"
+**Headline approach**: Speak to the desire to go deeper, not just "become a teacher"
 - ✓ "Your practice is ready for the next level."
 - ✗ "Sign up for our teacher training programme"
 
-**CTA language**:
-- "Join the Waitlist" (cohort pre-launch)
-- "Download the Brochure" (lead magnet)
-- "Reserve Your Spot" (enrolment)
-- "Book Your Free Trial" (intro offer)
-
-**Prohibited**: exclamation marks in body copy, corporate language, anything that sounds like a gym
+**CTA language**: "Join the Waitlist" / "Download the Brochure" / "Reserve Your Spot" / "Book Your Free Trial"
+Never: exclamation marks in body copy, corporate language, anything gym-like
 
 ## Copy Rules
 
-- British spelling throughout (programme, recognised, colour, honour)
-- No em dashes — rewrite or use comma/colon
+- British spelling (programme, recognised, colour)
+- No em dashes
 - Cohort language: "Weekend schedules built around real life"
 - Always mention Yoga Alliance accreditation where relevant
-- Graduate social proof: "1,000+ graduates" or confirm current number
+- Graduate social proof: confirm current number before publishing
 
 ## Active Campaigns
 
-- **€49 intro offer**: Meta and Google campaigns, location-specific landing pages linking to GMB profiles
-- **Teacher training brochure**: Lead magnet campaign, evergreen
+- **€49 intro offer**: Meta + Google campaigns, location-specific landing pages + GMB profiles
+- **Teacher training brochure**: Lead magnet, evergreen campaign
 - **Sligo studio**: Location-specific campaigns
-- **EOD/EOW/EOM reports**: Go to yogahub Slack workspace (#eod-head-office, channel ID C073H7YGLBC) via native Slack MCP only
 
-## Reporting
+## Slack / Reporting
 
-- **Slack workspace**: yogahubgroup.slack.com → native Slack MCP (never Composio/Rube)
-- **Reporting channels**: #eod-head-office
-- EOD, EOW, and EOM report format must be consistent — always include: platform, spend, leads, CPL, notes
-
-## GHL / Tech Stack
-
-- GHL sub-account for yogahub within BuilderBee agency
-- Landing pages built for Meta and Google intro offer campaigns
-- Heatmaps via Microsoft Clarity (analysis done for landing page CRO)
-- Google My Business profiles connected to intro offer landing pages
+- **Workspace**: yogahubgroup.slack.com → native Slack MCP only (never Composio/Rube)
+- **Channel**: #eod-head-office (ID: C073H7YGLBC)
+- EOD, EOW, EOM reports always include: platform, spend, leads, CPL, notes
 
 ## Design Direction
 
-- Nordic editorial minimalism
-- White is the hero — use it generously
-- Rose/pink as warm structural accent, not decorative
-- Single-pixel rules as the only decoration
-- Placeholder images: warm blush panels
-- No clutter, no gradients, no rounded corners on cards
+- **Light theme** — white bg, dusty rose `#D8C4C4` as the warm brand accent
+- Quicksand only — weight contrast does the heavy lifting
+- Nordic editorial minimalism — white space is the hero
+- Dusty rose as structural accent (section fills, borders), not decoration
+- No gradients, no rounded-corner cards, single-pixel rules as the only decoration
+- Placeholder images: warm blush `#D8C4C4` panels
