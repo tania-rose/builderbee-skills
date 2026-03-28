@@ -6,93 +6,96 @@ description: Full brand, copy, and design standards for Dr. Lorenc Aesthetic Pla
 # Dr. Lorenc — Client Skill
 
 **Full name**: Dr. Lorenc Aesthetic Plastic Surgery Center
-**Location**: New York City
+**Location**: 983 Park Avenue, New York City (Upper East Side)
 **Website**: lorenc.com
 **Speciality**: Medical aesthetics and plastic surgery
 
-## Brand Colours (apply automatically to ALL assets)
+## Brand Colours (extracted from lorenc.com CSS — verified by frequency)
 
-| Token | Hex | Use |
-|-------|-----|-----|
-| Navy | `#345666` | Primary dark, headings |
-| Orange | `#E4944D` | CTA buttons, accent |
-| Light background | `#F3F3F1` | Page backgrounds |
-| Dark text | `#313130` | Body text |
-| Muted blue-grey | `#6E808B` | Secondary text |
-| Pale blue | `#C9DBE5` | Borders, subtle accents |
+| Token | Hex | Frequency | Use |
+|-------|-----|-----------|-----|
+| Dark Charcoal | `#313130` | 92× | Primary body text |
+| Navy | `#345666` | 66× | Primary brand colour — headings, dark accents |
+| Light Background | `#F3F3F1` | 58× | Page and section backgrounds |
+| White | `#FFFFFF` | 52× | Cards, panels, reversed text |
+| Navy Mid | `#335565` | 48× | Hover states, mid-weight navy |
+| Navy Deep | `#2b5672` | 44× | Dark variant of primary navy |
+| Orange | `#E4944D` | 43× | CTA buttons, accent highlight |
+| Pale Blue | `#C9DBE5` | 11× | Borders, subtle panels |
+| Muted Blue-Grey | `#6E808B` | 9× | Secondary text, captions |
 
-## Typography
+## Default Theme: LIGHT
 
-- **Headings**: Playfair Display (serif, authoritative, luxury medical)
-- **Body**: Poppins (clean, modern, approachable)
-- Never swap these — they are non-negotiable for brand consistency
+The website is **light-themed**:
+- **Page background**: `#F3F3F1` warm light grey
+- **Body text**: `#313130` dark charcoal
+- **Headings**: `#345666` navy
+- **CTA buttons**: `#E4944D` orange
+- **Borders/panels**: `#C9DBE5` pale blue
+- Light bg = `#313130` or `#345666` text always. Never dark text on dark bg.
+
+## Typography (extracted from lorenc.com — verified)
+
+- **Heading display**: **Playfair Display** (serif, elegant, authoritative) — confirmed in CSS
+- **Secondary display**: **Syne** (modern geometric sans — also used on site, weights 400+700)
+- **Body**: **Poppins** (clean, modern)
+- **Additional loaded**: DIN Next, Madefor Text, Helvetica Neue (Wix Fonts stack)
+- **Primary working pair**: Playfair Display (headings) + Poppins (body)
+- Font colour on light: `#313130` body / `#345666` headings
+- Font colour on dark: white
 
 ## Brand Identity
 
-Luxury medical aesthetics. The tone must balance clinical credibility with warmth and accessibility. Patients are trusting this practice with their appearance and wellbeing. Every word must reinforce: expertise, safety, discretion, and care.
+Luxury NYC medical aesthetics. Park Avenue practice established 1987. Board-certified, internationally recognised. The tone balances clinical credibility with warmth and discretion. Every word reinforces expertise, safety, privacy, and care.
 
 ## Copy Voice & Tone
 
 **Voice pillars**: Expert · Warm · Discreet · Reassuring · NYC luxury
-**Patient profile**: Affluent NYC patient, values expertise and privacy above all else
 
-**Headline approach**: Lead with outcome and expertise, never with price or urgency
+**Headline approach**: Outcome and expertise first — never price or urgency
 - ✓ "Precision aesthetics. Results that speak for themselves."
 - ✗ "Book now and save on your next treatment!"
 
-**CTA language**:
-- "Request a Consultation"
-- "Schedule Your Appointment"
-- "Contact the Practice"
-- Never: "Book Now", "Sign Up", "Get Started", anything that sounds like an e-commerce store
+**CTA language**: "Request a Consultation" / "Schedule Your Appointment" / "Contact the Practice"
+Never: "Book Now", "Sign Up", "Buy Now", "Get Started"
 
-**Prohibited**: Before/after language that feels sensationalist, anything that trivialises surgical procedures, urgency tactics, discount language
+**Prohibited**: Sensationalist before/after language, urgency tactics, discount language, anything trivialising surgical procedures
 
 ## Copy Rules
 
-- American spelling (program not programme, color not colour, recognize not recognise)
-- No em dashes — rewrite or use comma/colon
+- **American spelling** (program, color, recognize)
+- No em dashes
 - Medical procedure names always capitalised correctly — confirm with client
-- HIPAA compliance: never reference specific patient data, conditions, or identifiable information in any marketing copy
-- Testimonials: must be appropriately vague about specific procedures if HIPAA-sensitive
+- HIPAA: never reference specific patient data, conditions, or identifiable information
+- Testimonials: appropriately vague about specific procedures if HIPAA-sensitive
 
 ## HIPAA Compliance
 
-- GHL build uses HIPAA add-on ($297/month on standalone account)
-- BAA must be signed before any patient data touches the CRM
-- All staff and patient email templates must be HIPAA-aware
-- Custom login page built with HIPAA compliance in mind
-- **Every asset that could touch patient data must be reviewed for HIPAA compliance before delivery**
+- GHL standalone account with HIPAA add-on ($297/month)
+- BAA signed before any patient data touches the CRM
+- All staff/patient email templates must be HIPAA-aware
+- Every asset touching patient data must be HIPAA-reviewed before delivery
 
 ## GHL Setup
 
-- Standalone GHL account (separated from BuilderBee agency account)
+- Standalone GHL account (separate from BuilderBee agency)
 - HIPAA add-on enabled
-- Inventory management for medical aesthetics products
-- Staff email templates + patient email templates
-- Custom login page built by BuilderBee
+- Inventory management for aesthetics products
+- Staff + patient email templates
+- Custom login page
 - Appointment reminder sequences
 
-## Active Assets
+## Currency & Spelling
 
-- Patient intake form (GHL embed on custom landing page)
-- Appointment reminder email sequences
-- Staff onboarding emails
-- Custom CRM login page
-- Inventory management system for aesthetics products
-
-## Currency
-
-- USD (New York City client)
-- American spelling throughout
+- USD · American spelling
 
 ## Design Direction
 
-- Luxury medical aesthetic — think high-end NYC clinic brochure
+- **Light theme** — `#F3F3F1` warm light bg, `#313130` text, `#345666` navy headings
+- `#E4944D` orange used sparingly for CTAs only — never decoratively
+- Playfair Display headlines at elegant weights — luxury medical feel
+- Syne as a secondary modern heading option (confirm usage per asset)
 - Clean, spacious layouts with generous white space
-- Navy as the grounding anchor colour
-- Orange as the single warm CTA accent — used sparingly
-- Light `#F3F3F1` backgrounds — never pure white, never grey
-- Playfair Display headlines at elegant weights
-- No gradients, no playful elements, no organic shapes — structured and precise
+- No gradients, no organic shapes, no playful elements — structured and precise
+- Pale blue `#C9DBE5` for borders and subtle panels
 - Photography: clinical-but-warm, polished, no over-filtered stock
