@@ -17,6 +17,7 @@ copy, and voice rules automatically throughout the session.
 | `bbtrs/` | BBTRS — BioDynamic Breathwork & Trauma Release System |
 | `dr-lorenc/` | Dr. Lorenc Aesthetic Plastic Surgery Center (NYC) |
 | `builderbee/` | BuilderBee universal standards (apply to all clients) |
+| `llm-council/` | LLM Council — pressure-test decisions through 5 AI advisors + chairman synthesis |
 
 ## Structure
 Each folder contains:
