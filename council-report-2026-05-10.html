@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Council Verdict — GoLeadSpark / Cohort Filling Method — 2026-05-10</title>
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --line: #e6e6e6;
+    --bg: #fafafa;
+    --card: #ffffff;
+    --accent: #c08a4a;
+    --warn: #b04a3a;
+    --good: #3a7a52;
+    --contrarian: #b04a3a;
+    --first-p: #4a6b8a;
+    --expansion: #c08a4a;
+    --outsider: #6b5a8a;
+    --executor: #3a7a52;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    margin: 0;
+    line-height: 1.55;
+    font-size: 16px;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 48px 24px 80px; }
+  .eyebrow {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  h1 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+  }
+  .question {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    padding: 18px 22px;
+    margin: 24px 0 40px;
+    border-radius: 2px;
+    font-size: 15px;
+    color: #333;
+  }
+  h2 {
+    font-size: 19px;
+    font-weight: 600;
+    margin: 40px 0 14px;
+    letter-spacing: -0.005em;
+  }
+  h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 20px 0 8px;
+    color: var(--ink);
+  }
+  .verdict {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 28px 32px;
+    margin: 8px 0 40px;
+  }
+  .verdict h2:first-child { margin-top: 0; }
+  .verdict-block { margin-bottom: 24px; }
+  .verdict-block:last-child { margin-bottom: 0; }
+  .one-thing {
+    background: #fff8ee;
+    border: 1px solid #e8d4a8;
+    border-left: 3px solid var(--accent);
+    padding: 18px 22px;
+    margin-top: 28px;
+    border-radius: 2px;
+  }
+  .one-thing .label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .alignment {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 24px 28px;
+    margin: 8px 0 40px;
+  }
+  .advisor-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 8px 16px;
+    margin-top: 16px;
+    font-size: 14px;
+  }
+  .advisor-grid .name {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .advisor-grid .stance {
+    color: #444;
+  }
+  .pill {
+    display: inline-block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+    margin-right: 8px;
+  }
+  .pill.dont { background: #fbeae7; color: var(--warn); }
+  .pill.go { background: #e7f1ec; color: var(--good); }
+  .pill.bigger { background: #fbf3e3; color: var(--accent); }
+  .pill.reframe { background: #ebeff7; color: var(--first-p); }
+  details {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding: 0;
+  }
+  details > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 14px 20px;
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  details > summary::-webkit-details-marker { display: none; }
+  details > summary::after {
+    content: "+";
+    color: var(--muted);
+    font-weight: 400;
+    font-size: 18px;
+  }
+  details[open] > summary::after { content: "−"; }
+  details .body {
+    padding: 0 20px 20px;
+    border-top: 1px solid var(--line);
+    padding-top: 16px;
+    font-size: 14.5px;
+    color: #2a2a2a;
+  }
+  .advisor-tag {
+    display: inline-block;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    padding: 2px 8px;
+    border-radius: 2px;
+    color: white;
+    margin-right: 10px;
+    font-weight: 600;
+  }
+  .tag-contrarian { background: var(--contrarian); }
+  .tag-first { background: var(--first-p); }
+  .tag-expansion { background: var(--expansion); }
+  .tag-outsider { background: var(--outsider); }
+  .tag-executor { background: var(--executor); }
+  ul.tight { padding-left: 20px; margin: 8px 0; }
+  ul.tight li { margin-bottom: 6px; }
+  .footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .gate {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 16px;
+    align-items: flex-start;
+  }
+  .gate-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .gate-body { flex: 1; padding-top: 4px; }
+  .gate-body strong { display: block; margin-bottom: 4px; }
+  blockquote {
+    border-left: 2px solid var(--line);
+    margin: 12px 0;
+    padding: 4px 0 4px 16px;
+    color: #444;
+    font-style: italic;
+    font-size: 14.5px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow">LLM Council Verdict · 2026-05-10</div>
+  <h1>Should I launch GoLeadSpark with a $4,997 "Cohort Filling Method" snapshot, or start with pay-per-booked-call?</h1>
+
+  <div class="question">
+    <strong>The question:</strong> Build a new SaaS/agency brand on GHL for breathwork, yoga/pilates, and somatic programs. $4,997 snapshot called the "Cohort Filling Method." Two launch options: (A) sell the snapshot direct, or (B) pay-per-booked-call to prove the system works first. What about this business model and niche?
+  </div>
+
+  <div class="verdict">
+
+    <div class="verdict-block">
+      <h2>Where the Council Agrees</h2>
+      <ul class="tight">
+        <li><strong>The pricing is wrong for this buyer.</strong> Studio owners clearing $4-8k/mo cannot write a $4,997 check for software. Closest comp in the user's own portfolio (yogahub teacher training) caps at £1,199.</li>
+        <li><strong>The brand language fails the buyer.</strong> "GoLeadSpark," "Cohort Filling Method," "Snapshot," and "Lead" are all seller-jargon for a buyer who uses circle, container, round, intake.</li>
+        <li><strong>The system is n=1, not a method.</strong> One AOB deployment is a pattern, not a productized system. No proof it transplants to a Dublin pilates studio or BBTRS retreat ops.</li>
+        <li><strong>The existing assets enable speed.</strong> Live ad accounts, GHL dev capacity, tag taxonomy, working funnels, Meta buyer — PPBC is the lower-trust, faster-to-cash path.</li>
+      </ul>
+    </div>
+
+    <div class="verdict-block">
+      <h2>Where the Council Clashes</h2>
+      <p><strong>Speed vs validation.</strong> The Executor wants pilot revenue this week using existing assets. The First Principles Thinker and the Contrarian want a transplantability test before any brand or pricing is set. B is right that custom-work treadmills are real; A and C are right that a fragile n=1 doesn't deserve a brand yet.</p>
+      <p><strong>Ceiling vs floor.</strong> The Expansionist wants category-king ambition (license, SaaS stack, book, $7,500 + $497/mo). Everyone else thinks that's fan-fiction until the system has shipped to one non-AOB client. The vision may eventually be right; it cannot be the launch plan.</p>
+    </div>
+
+    <div class="verdict-block">
+      <h2>Blind Spots the Council Caught</h2>
+      <ul class="tight">
+        <li><strong>The AOB channel conflict (4 of 5 peer reviewers, biggest shared miss).</strong> The GHL snapshot rides on AOB's IP, brand, and 2,500-facilitator ecosystem. Productizing it under a new brand and selling to AOB's own facilitators is a relationship / IP / revenue-share landmine. None of the five advisors named this on first pass.</li>
+        <li><strong>Attribution problem.</strong> Are AOB's results from the snapshot, or from AOB's warm list and Anthony's authority? If the latter, GoLeadSpark is selling a feature of AOB, not a product.</li>
+        <li><strong>Existing-client pricing leak.</strong> BBTRS and yogahub pay BuilderBee retainers. If they see "the same system" sold publicly for $4,997, renewals come under pressure.</li>
+        <li><strong>Calm Code launch bandwidth.</strong> AOB's flagship retreat is now (May 2026). A new brand build cannibalizes the very case study that would make the brand sellable.</li>
+      </ul>
+    </div>
+
+    <div class="verdict-block">
+      <h2>The Recommendation</h2>
+      <p><strong>Don't launch GoLeadSpark yet.</strong> Three sequential gates:</p>
+
+      <div class="gate">
+        <div class="gate-num">1</div>
+        <div class="gate-body">
+          <strong>Resolve the AOB question (this week).</strong>
+          Explicit conversation with Anthony and Amy. You want to productize the GHL system. Negotiate revenue share, exclusivity carve-out, or formal co-brand. In writing. Without this, the council's biggest unflagged risk goes live the day you launch.
+        </div>
+      </div>
+
+      <div class="gate">
+        <div class="gate-num">2</div>
+        <div class="gate-body">
+          <strong>Run ONE paid PPBC pilot on a non-AOB facilitator (next 30 days).</strong>
+          €150/booked call, 30-day window, breathwork or somatic facilitator outside AOB's direct ecosystem. Answers the attribution question — does the system fill a cohort without you, without AOB's warm list, without Anthony's authority. This single experiment resolves all five advisors at once.
+        </div>
+      </div>
+
+      <div class="gate">
+        <div class="gate-num">3</div>
+        <div class="gate-body">
+          <strong>Rename around buyer language.</strong>
+          Drop "Lead," "Spark," "Cohort," "Snapshot," "Method." Test against words facilitators say out loud: circle, container, round, intake, fuller next round. Working titles only until tested with three real prospects.
+        </div>
+      </div>
+
+      <p style="margin-top: 18px;"><strong>On $4,997 vs PPBC:</strong> Side with PPBC, not the snapshot sale. PPBC is structurally honest (you have one deployment, not a product), aligns with buyer trust at this stage, and uses assets you already own. <em>But do not brand it GoLeadSpark yet.</em> Run the pilot under BuilderBee or no brand at all.</p>
+
+      <p>If all three gates clear: you have a deal, a portable system, and a vocabulary. Then you price. Then you brand. Then the Expansionist's vision becomes a real Q4 conversation. If gate 1 fails or the pilot flops: you saved six months building a brand that couldn't ship.</p>
+    </div>
+
+    <div class="one-thing">
+      <div class="label">The one thing to do first</div>
+      <strong>Email Anthony and Amy at AOB this week.</strong> Tell them you want to productize the GHL system and offer them a stake — revenue share, co-brand, or formal exclusivity carve-out for the Calm Code lineage. Their answer determines whether GoLeadSpark exists at all. Every other decision is downstream of that conversation.
+    </div>
+
+  </div>
+
+  <h2>Where the Five Advisors Landed</h2>
+  <div class="alignment">
+    <div class="advisor-grid">
+      <div class="name"><span class="advisor-tag tag-contrarian">Contrarian</span></div>
+      <div class="stance"><span class="pill dont">Don't launch</span> n=1, $4,997 is delusional pricing for this buyer, "Cohort Filling Method" is coach-bro for an anti-coach-bro niche. Pilot with BBTRS first.</div>
+
+      <div class="name"><span class="advisor-tag tag-first">First Principles</span></div>
+      <div class="stance"><span class="pill reframe">Wrong question</span> Snapshot, agency, PPBC are three different businesses. Brand is downstream. Run a no-brand pilot on a non-client to test if the system fills a cohort without you in the room.</div>
+
+      <div class="name"><span class="advisor-tag tag-expansion">Expansionist</span></div>
+      <div class="stance"><span class="pill bigger">Go bigger</span> 50,000+ TAM globally. Snapshot is the wedge. Stack: $7,500 snapshot + $497/mo SaaS + $1,500/yr community + $15K DWY + book. Co-brand inside AOB's ecosystem.</div>
+
+      <div class="name"><span class="advisor-tag tag-outsider">Outsider</span></div>
+      <div class="stance"><span class="pill dont">Buyer can't read it</span> "Lead," "Cohort," "Snapshot" are all seller-jargon. $4,997 = mortgage payment for a studio owner. Only PPBC earns trust from a stranger.</div>
+
+      <div class="name"><span class="advisor-tag tag-executor">Executor</span></div>
+      <div class="stance"><span class="pill go">Ship Monday</span> PPBC, full stop. 5 things this week: 3 pilot DMs, clone snapshot, 1-page agreement, domain + Stripe, brief Meta buyer. Revenue in 10-14 days. Avoid design mode.</div>
+    </div>
+  </div>
+
+  <h2>Advisor Detail</h2>
+
+  <details>
+    <summary><span class="advisor-tag tag-contrarian">Contrarian</span> Don't launch — n=1 problem, pricing mismatch, brand splits focus from Calm Code</summary>
+    <div class="body">
+      <p>You don't have a productized system. You have one snapshot, built for one client (AOB), called "the foundation model" — founder-speak for "n=1, not yet generalized." BBTRS and yogahub are structurally different businesses. A snapshot for a 2,500-facilitator breathwork school will not drop cleanly into a Dublin pilates studio.</p>
+      <p>$4,997 is delusional pricing for a breathwork studio owner. Your closest comp (yogahub teacher training) tops out at £1,199. You're pricing 4x above what your ICP spends on their own flagship offers.</p>
+      <p>"Cohort Filling Method" is a coach-bro name attached to a niche that explicitly rejects coach-bro energy.</p>
+      <p>The unnamed risk: BuilderBee revenue depends on you shipping for AOB, BBTRS, and yogahub. A new brand splits your attention precisely when AOB's Calm Code retreat launches in May 2026. Option B isn't safer — it's a different business with cashflow risk you haven't modeled. Don't launch either yet. Run the snapshot as a paid pilot with BBTRS first.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="advisor-tag tag-first">First Principles</span> You're asking the wrong question</summary>
+    <div class="body">
+      <p>The real question isn't "snapshot vs PPBC." The real question is: what business are you actually in?</p>
+      <p>You have three things: (1) a repeatable technical artifact (the snapshot), (2) domain knowledge about a specific buyer, (3) a delivery team optimized for done-for-you. These are three different businesses with different unit economics, cash flow, team shape, defensibility. You're treating them as a menu when they're mutually constraining commitments.</p>
+      <p>"Cohort Filling Method" is not a method. A method works when someone other than you runs it on a business you've never seen. You have one foundation deployment. That's a pattern, not a method.</p>
+      <p>The brand question is downstream. GoLeadSpark vs BuilderBee is a distribution decision, not identity. You're spinning it up because productizing feels embarrassing under your services brand. That's a tell.</p>
+      <p><strong>The right question: can the snapshot fill a cohort without you in the room?</strong> Run that experiment, on one non-client, at cost, before naming or pricing anything. Everything else is premature.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="advisor-tag tag-expansion">Expansionist</span> The category-king upside everyone's missing</summary>
+    <div class="body">
+      <p>"Snapshot vs PPBC" is small thinking. You're launching the category-defining operating system for a niche about to explode.</p>
+      <p>Breathwork, somatics, and trauma-informed movement are mid-curve in a 10-year demand wave. AOB alone has 2,500+ facilitators worldwide — each is a future micro-business needing cohort-filling infrastructure. TAM is 50,000+ globally, not 500.</p>
+      <p>The 10x play: license "Cohort Filling Method" as a certification to other agencies. Co-brand inside AOB's ecosystem for free distribution. Same play with BBTRS across Poland/Estonia/Bali/Canada/Brazil — four geographic beachheads.</p>
+      <p>The snapshot at $4,997 is the wedge, not the product. The real stack: (1) recurring SaaS at $297-497/mo on top of GHL reseller margin, (2) paid community ($1,500/yr), (3) done-with-you cohort launches at $15K, (4) a book/methodology.</p>
+      <p>Pick option A. Price the snapshot at $7,500 with a $497/mo required subscription. PPBC caps your upside at "good agency." Productization caps it at "category king."</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="advisor-tag tag-outsider">Outsider</span> Every noun on the page is yours, not hers</summary>
+    <div class="body">
+      <p>"GoLeadSpark" sounds like a knockoff of every martech tool I've half-heard of — GoHighLevel, HubSpot, Spark, Lead-something. It blends into B2B SaaS noise. To a yoga studio owner, it does not whisper "wellness," "students," "filling my next teacher training." It whispers "cold sales bro in my inbox." "Lead" is a turn-off — wellness people serve clients, students, members. Not leads.</p>
+      <p>"Cohort Filling Method" — no. Universities say cohort. SaaS bootcamps say cohort. She runs a "group program," "circle," "container," "round," "intake." "Filling" sounds mechanical. Rename around the words she actually uses.</p>
+      <p>"Snapshot" — zero clue. I assumed screenshot or backup. Outside the GHL bubble nobody knows. Use it without translation and you've already lost the non-technical buyer.</p>
+      <p>$4,997 for a yoga studio owner clearing $4-8k/mo? That's a mortgage payment. At that price I want a human, an outcome, and a guarantee — not a "system."</p>
+      <p>Pay-per-booked-call, easily. Upfront $4,997 from a brand I've never heard of with jargon I don't understand? Hard no. PPBC says "I'll bet on myself." Prove it works, then productize.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="advisor-tag tag-executor">Executor</span> PPBC, full stop. 5 things this week.</summary>
+    <div class="body">
+      <p>PPBC. Snapshot sale to a brand-new audience requires trust, case studies, sales calls, onboarding ops you haven't built. PPBC uses what you already have. First revenue in 10-14 days, not 60.</p>
+      <p><strong>This week:</strong></p>
+      <ol>
+        <li>Pick 3 pilot targets from your existing network. DM today: "I'll fill your next cohort, you pay €150/booked call, no setup fee." Close one by Friday.</li>
+        <li>Clone the AOB snapshot into a new sub-account labeled "Cohort Filling Method v1." GHL dev does this in a day. Don't rebrand yet.</li>
+        <li>Write the PPBC agreement — one page. Booked call definition, show-rate floor, weekly Stripe, 30-day pilot.</li>
+        <li>Buy goleadspark.com + Stripe link. Notion page is fine for week one. No site, no logo round.</li>
+        <li>Brief the Meta buyer on a €49 intro template mirroring the yoga campaign already running. Reuse creative angles. Launch ads day 1.</li>
+      </ol>
+      <p><strong>What breaks it:</strong> Re-entering design mode (kills 6 weeks). More than 2 pilots before the playbook is documented (you'll drown in custom work).</p>
+    </div>
+  </details>
+
+  <h2>Peer Review Highlights</h2>
+  <details>
+    <summary>What the peer review round caught</summary>
+    <div class="body">
+      <p><strong>Strongest votes:</strong> Outsider (3 of 5 reviewers), Contrarian (2 of 5). The reviewers who picked the Outsider argued the offer as written cannot be sold in the buyer's language — that's a viability gate, not a marketing tweak. The reviewers who picked the Contrarian argued only that response grounded the critique in actual evidence (£1,199 ICP ceiling, AOB's May launch, structural differences between BBTRS / yogahub / AOB).</p>
+      <p><strong>Biggest blind spot — unanimous on the Expansionist (5 of 5).</strong> Stacking SaaS + community + DWY + certification + book on a system that has shipped to one client and isn't validated to transplant is "premature scaling fantasy." Treats AOB as platform thesis when AOB hasn't even been confirmed as a product fit beyond itself.</p>
+      <p><strong>What ALL FIVE advisors missed (4 of 5 reviewers independently flagged this):</strong></p>
+      <blockquote>The AOB channel conflict and IP question. The user's productized system rides on AOB's IP, brand, and 2,500-person facilitator ecosystem. Selling a clone of AOB's funnel to AOB's own facilitators is a relationship/IP/revenue-share question that precedes pricing or PPBC. AOB founders need to be partners — or carved out — in writing before a brand exists.</blockquote>
+      <p>One reviewer added: "Are AOB's results attributable to the snapshot, or to AOB's warm list and Anthony's authority? If the latter, GoLeadSpark is selling a feature of AOB, not a product." That single experiment resolves all five advisors at once.</p>
+    </div>
+  </details>
+
+  <div class="footer">
+    Council convened: 2026-05-10 · Methodology: Karpathy-style 5-advisor parallel + anonymized peer review + chairman synthesis · Full transcript: <code>council-transcript-2026-05-10.md</code>
+  </div>
+
+</div>
+</body>
+</html>
